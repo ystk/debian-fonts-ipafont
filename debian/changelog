@@ -1,0 +1,248 @@
+fonts-ipafont (00303-10.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * otf-ipafont-*.preinst: Unregister the ttf-japanese-*.ttf alternatives.
+  * fonts-ipafont-*.preinst: Clean up the ttf-japanese-*.ttf alternatives set
+    up by otf-ipafont-* in squeeze. This needs to be done in fonts-ipafont-*
+    as well since there is no guarantee that the transitional otf-ipafont-*
+    packages were installed and did clean this up. Since new installations of
+    fonts-ipafont-* cannot be distinguished from "upgrades" from otf-ipafont-*
+    this needs to be run on new installations, too.  (Closes: #700341)
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 14 Feb 2013 18:51:13 +0100
+
+fonts-ipafont (00303-10) unstable; urgency=low
+
+  * debian/lintian*, debian/fonts-ipafont*.install
+    - remove those to not override "no-upstream-changelog"
+  * debian/fonts-ipafont-{gothic,mincho}.lintian-overrides
+    - override "package-contains-empty-directory"
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 16 Jun 2012 05:34:42 +0900
+
+fonts-ipafont (00303-9) unstable; urgency=low
+
+   * debian/control
+     - Bump up debhelper version to 9.20120518~ to deal with xz option
+   * debian/compat
+     - set 9
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 12 Jun 2012 17:20:42 +0900
+
+fonts-ipafont (00303-8) unstable; urgency=low
+
+  * debian/*.dirs
+    - re-add it to avoid error with installing alternatives (Closes: #676308)
+      Thanks to Andreas Beckmann <debian@abeckmann.de> 
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 10 Jun 2012 22:50:52 +0900
+
+fonts-ipafont (00303-7) unstable; urgency=low
+
+  * debian/rules
+    - compress with xz 
+  * debian/control
+    - set "Pre-Depends: dpkg (>= 1.15.6~)" to use xz
+    - replace s/Conflicts/Breaks/g
+  * debian/copyright
+    - update to "Machine-readable debian/copyright file 1.0"
+  * debian/lintian/fonts-ipafont*,fonts-ipafont.install
+    - override "no-upstream-changelog"
+    - fix "unused-override"
+  * debian/fonts-ipafont*.dirs
+    - remove unnecessary files
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 05 Jun 2012 08:47:26 +0900
+
+fonts-ipafont (00303-6) unstable; urgency=low
+
+  * debian/control
+    - set "Standards-Version: 3.9.3"
+    - set "Priority: extra" to otf-ipafont{,-gothic,-mincho}
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 10 Mar 2012 04:05:13 +0900
+
+fonts-ipafont (00303-5) unstable; urgency=low
+
+  * debian/fonts-ipafont-{gothic,mincho}.install
+    - revert install path
+  * debian/fonts-ipafont-{gothic,mincho}.{preinst,postinst,prerm}
+    - use fonts-japanese-{gothic,mincho}.ttf, instead of 
+      ttf-japanese-{gothic,mincho} 
+  * debian/copyright
+    - fix "syntax-error-in-dep5-copyright" lintian warning
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 19 Sep 2011 11:34:03 +0900
+
+fonts-ipafont (00303-4) unstable; urgency=low
+
+  * debian/control
+    - Fix "Please recommend fonts-ipafont-gothic instead of otf-ipafont-
+      gothic" (Closes: #636138)
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 03 Aug 2011 00:05:58 +0900
+
+fonts-ipafont (00303-3) unstable; urgency=low
+
+  * debian/control
+    - fix Vcs-Svn field
+    - introduce otf-ipafont-{gothic,mincho} as transitional dummy package
+    - drop Provides as well
+    - specify version for Conflicts: and Replaces:
+
+ -- Hideki Yamane <henrich@debian.org>  Fri, 29 Jul 2011 13:54:00 +0200
+
+fonts-ipafont (00303-2) unstable; urgency=low
+
+  * debian/control
+    - fix Vcs-* field 
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 27 Jul 2011 21:08:27 +0200
+
+fonts-ipafont (00303-1) unstable; urgency=low
+
+  * New upstream release
+  * update package naming schema
+  * debian/watch
+    - adjust to deal with upstream change
+  * debian/fonts-ipafont-{mincho,gothic}.dirs
+    - now it creates /usr/share/fonts/truetype to avoid broken symlink for
+     ttf-japanege-{mincho,gothic}
+  * add lintian overrides to ignore fonts-duplicates during transition.
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 24 Jul 2011 16:54:59 +0200
+
+otf-ipafont (00302-10) unstable; urgency=medium
+
+  * debian/otf-ipafont-gothic.prerm
+    - fix mistaken about removing otf-ipafont-mincho alternatives.
+      Thanks to Nobuhiro Iwamatsu <iwamatsu@nigauri.org> for the patch
+      (Closes: #604622) 
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 23 Nov 2010 19:13:51 +0900
+
+otf-ipafont (00302-9) unstable; urgency=low
+
+  * debian/control
+    - Fix "package description: missing space after comma"
+      Thanks to Lionel Elie Mamane <lionel@mamane.lu> (Closes: #591664)
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 05 Aug 2010 08:26:02 -0400
+
+otf-ipafont (00302-8) unstable; urgency=low
+
+  * debian/watch
+    - update it to deal with upstream change 
+  * debian/control
+    - update "Homepage:" field
+    - bump up "Standards-Version: 3.9.0" with no change.
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 24 Jul 2010 17:44:42 +0900
+
+otf-ipafont (00302-7) unstable; urgency=low
+
+  * debian/control
+    - Fix "Typo in Virtual Package name" (Closes: #585956)
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 15 Jun 2010 21:29:18 +0900
+
+otf-ipafont (00302-6) unstable; urgency=low
+
+  * debian/control
+    - add "Provides: ttf-japanese-{gothic,mincho}". Those are OpenType font, but
+     are provided as ttf-japanese-{gothic,mincho} because ttf-japanese-* is a 
+     just mechanism to be able to provide Japanese font with flexibilities.
+     Thanks to Youhei SASAKI <uwabami@gfd-dennou.org>
+  * Fix "Typo in Virtual Package name" <explain what you changed and
+    why> (Closes: #585956)
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 15 Jun 2010 21:29:08 +0900
+
+otf-ipafont (00302-5) unstable; urgency=low
+
+  * debian/control
+    - update my address
+    - set "Build-Depends: debhelper (>= 7.0.50~)"
+    - set "Standards-Version: 3.8.4"
+    - remove "DM-Upload-Allowed: yes" since I became DD.
+   * debian/otf-ipafont-mincho.dirs
+    - add /usr/share/fonts/truetype to prevent installation error in some cases
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 22 May 2010 00:58:14 +0900
+
+otf-ipafont (00302-4) unstable; urgency=low
+
+  * debian/control
+    - fix typo in description (Closes: #573713)
+      Thanks to TAKAHASHI Motonobu <monyo@monyo.com>
+  * debian/otf-ipafont-{gothic,mincho}.preinst
+    - add it to remove symlink in /usr/share/fonts/opentype
+      Thanks to Atsuhito Kohda <kohda@debian.org>
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sun, 21 Mar 2010 15:53:42 +0900
+
+otf-ipafont (00302-3) unstable; urgency=low
+
+  * debian/control
+    - set "Conflicts: ttf-ipafont (<= 00203-13) 
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 13 Mar 2010 20:35:20 +0900
+
+otf-ipafont (00302-2) unstable; urgency=low
+
+  * debian/control
+    - fix to otf-ipafont depends to gothic and mincho package
+      Thanks to Hideo Oshima <hideo.oshima@gmail.com> (Closes: #572731) 
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 06 Mar 2010 13:00:41 +0900
+
+otf-ipafont (00302-1) unstable; urgency=low
+
+  * New upstream release
+    - fix "isFixedPitch" as 0
+    - change its extension from .otf to .ttf to deal with MacOSX (Snow Leopard)
+      behaivor.
+  * debian/control:
+    - devide to otf-ipafont-gothic and otf-ipafont-mincho as user's request. 
+      otf-ipafont becomes meta package (Closes: #570067).
+    - add "Conflicts: otf-ipafont (<= 00301-4)" to otf-ipafont-{gothic,mincho}
+    - improve its description, "：" is not able to show correctly in some
+      environment.
+  * debian/otf-ipafont-{gothic,mincho}.{postinst,prerm},otf-ipafont.preinst
+    - change otf-japanese-{gothic,mincho}.otf to ttf-*.ttf.
+    - remove old otf symlinks. 
+    - set alternatives priority from 120 to 100 since otf-ipaexfont will be set
+      to 120.
+  * debian/otf-ipafont-{gothic,mincho}.install
+    - install *.ttf files
+  * debian/otf-ipafont-{gothic,mincho}.docs
+    - install Readme*.txt
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 27 Feb 2010 23:46:52 +0900
+
+otf-ipafont (00301-4) unstable; urgency=low
+
+  * Drop x-ttcidfont-conf, fontconfig et al. from Suggests
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 20 Dec 2009 17:37:50 +0100
+
+otf-ipafont (00301-3) unstable; urgency=low
+
+  * use debhelper7
+  * switch to source format 3.0 (quilt)
+  * drop defoma 
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 12 Dec 2009 17:11:28 +0900
+
+otf-ipafont (00301-2) unstable; urgency=low
+
+  * debian/watch: update it.
+  * debian/control: Bump up Standards-Version: 3.8.3 with no change 
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 22 Aug 2009 09:05:38 +0900
+
+otf-ipafont (00301-1) unstable; urgency=low
+
+  * Initial release (Closes: #531190) 
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 20 Jun 2009 18:13:49 +0900

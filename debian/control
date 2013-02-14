@@ -1,0 +1,99 @@
+Source: fonts-ipafont
+Section: fonts
+Priority: optional
+Maintainer: Debian Fonts Task Force <pkg-fonts-devel@lists.alioth.debian.org>
+Uploaders: Hideki Yamane <henrich@debian.org>
+Build-Depends: debhelper (>= 9.20120518~)
+Standards-Version: 3.9.3
+Homepage: http://ossipedia.ipa.go.jp/ipafont/index.html
+Vcs-Svn: svn://svn.debian.org/svn/pkg-fonts/packages/fonts-ipafont/
+Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-fonts/packages/fonts-ipafont
+
+Package: fonts-ipafont
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, fonts-ipafont-gothic, fonts-ipafont-mincho
+Breaks: ttf-ipafont (<= 00203-13), otf-ipafont (<< 00303-1)
+Replaces: otf-ipafont (<< 00303-1)
+Description: Japanese OpenType font set, IPAfont
+ IPAfont is a Japanese OpenType, a scalable font which was developed to 
+ supersede both the TrueType and the Type 1 ("PostScript") font formats,
+ font set that is provided by Information-technology Promotion Agency, 
+ Japan (IPA).
+ .
+ IPAfont is an outline font set suitable for both display and printing.
+ .
+ This is metapackage that depends on gothic and mincho font packages.
+
+Package: fonts-ipafont-gothic
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}
+Recommends: fonts-ipafont-mincho
+Breaks: ttf-ipafont (<= 00203-13), otf-ipafont (<= 00301-4), otf-ipafont-gothic (<< 00303-1)
+Replaces: otf-ipafont-gothic (<< 00303-1)
+Provides: fonts-japanese-gothic
+Description: Japanese OpenType font set, IPA Gothic font
+ IPAfont is a Japanese OpenType, a scalable font which was developed to 
+ supersede both the TrueType and the Type 1 ("PostScript") font formats,
+ font set that is provided by Information-technology Promotion Agency, 
+ Japan (IPA).
+ .
+ IPAfont is an outline font set suitable for both display and printing.
+ .
+ It comes with 2 styles in it. Equal-width and propotional styles are 
+ provided for Gothic (san-serif) styles.  It is known for its quality and 
+ formal style and consists of IPA Gothic and IPA P Gothic.
+ .
+ It covers practically every characters used in Japanese business
+ environments, i.e. about 11,000 characters based on JIS X 0213:2004.
+
+Package: fonts-ipafont-mincho
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}
+Recommends: fonts-ipafont-gothic
+Breaks: ttf-ipafont (<= 00203-13), otf-ipafont (<= 00301-4), otf-ipafont-mincho (<< 00303-1)
+Replaces: otf-ipafont-mincho (<< 00303-1)
+Provides: fonts-japanese-mincho
+Description: Japanese OpenType font set, IPA Mincho font
+ IPAfont is a Japanese OpenType, a scalable font which was developed to 
+ supersede both the TrueType and the Type 1 ("PostScript") font formats,
+ font set that is provided by Information-technology Promotion Agency, 
+ Japan (IPA).
+ .
+ IPAfont is an outline font set suitable for both display and printing.
+ .
+ It comes with 2 styles in it. Equal-width and propotional styles
+ are provided for Mincho (serif) style.  It is known for its quality and 
+ formal style and consists of IPA Mincho and IPA P Mincho.
+ .
+ It covers practically every characters used in Japanese business
+ environments, i.e. about 11,000 characters based on JIS X 0213:2004.
+
+Package: otf-ipafont
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: fonts-ipafont, ${misc:Depends}
+Priority: extra
+Section: oldlibs
+Architecture: all
+Description: transitional dummy package
+ This package is a dummy transitional package. It can be safely removed.
+
+Package: otf-ipafont-mincho
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: fonts-ipafont-mincho, ${misc:Depends}
+Priority: extra
+Section: oldlibs
+Architecture: all
+Description: transitional dummy package
+ This package is a dummy transitional package. It can be safely removed.
+
+Package: otf-ipafont-gothic
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: fonts-ipafont-gothic, ${misc:Depends}
+Priority: extra
+Section: oldlibs
+Architecture: all
+Description: transitional dummy package
+ This package is a dummy transitional package. It can be safely removed.

@@ -1,0 +1,6 @@
+# Compulsory line, this is a version 3 file
+version=3
+
+opts="filenamemangle=s/\.php/\.zip/" \
+http://ossipedia.ipa.go.jp/ipafont/download.html?ruleagreement=%E5%90%8C%E6%84%8F%E3%81%99%E3%82%8B%2FAccept \
+ IPAfont(.*)\.php
