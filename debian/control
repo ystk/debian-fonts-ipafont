@@ -4,14 +4,15 @@ Priority: optional
 Maintainer: Debian Fonts Task Force <pkg-fonts-devel@lists.alioth.debian.org>
 Uploaders: Hideki Yamane <henrich@debian.org>
 Build-Depends: debhelper (>= 9.20120518~)
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://ossipedia.ipa.go.jp/ipafont/index.html
-Vcs-Svn: svn://svn.debian.org/svn/pkg-fonts/packages/fonts-ipafont/
-Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-fonts/packages/fonts-ipafont
+Vcs-Git: git://anonscm.debian.org/pkg-fonts/fonts-ipafont/
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-fonts/fonts-ipafont.git;a=summary
 
 Package: fonts-ipafont
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
+Multi-Arch: foreign
+Pre-Depends: dpkg (>= 1.15.6~), ${misc:Pre-Depends}
 Depends: ${misc:Depends}, fonts-ipafont-gothic, fonts-ipafont-mincho
 Breaks: ttf-ipafont (<= 00203-13), otf-ipafont (<< 00303-1)
 Replaces: otf-ipafont (<< 00303-1)
@@ -27,7 +28,8 @@ Description: Japanese OpenType font set, IPAfont
 
 Package: fonts-ipafont-gothic
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
+Multi-Arch: foreign
+Pre-Depends: dpkg (>= 1.15.6~), ${misc:Pre-Depends}
 Depends: ${misc:Depends}
 Recommends: fonts-ipafont-mincho
 Breaks: ttf-ipafont (<= 00203-13), otf-ipafont (<= 00301-4), otf-ipafont-gothic (<< 00303-1)
@@ -50,7 +52,8 @@ Description: Japanese OpenType font set, IPA Gothic font
 
 Package: fonts-ipafont-mincho
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
+Multi-Arch: foreign
+Pre-Depends: dpkg (>= 1.15.6~), ${misc:Pre-Depends}
 Depends: ${misc:Depends}
 Recommends: fonts-ipafont-gothic
 Breaks: ttf-ipafont (<= 00203-13), otf-ipafont (<= 00301-4), otf-ipafont-mincho (<< 00303-1)
@@ -71,29 +74,3 @@ Description: Japanese OpenType font set, IPA Mincho font
  It covers practically every characters used in Japanese business
  environments, i.e. about 11,000 characters based on JIS X 0213:2004.
 
-Package: otf-ipafont
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: fonts-ipafont, ${misc:Depends}
-Priority: extra
-Section: oldlibs
-Architecture: all
-Description: transitional dummy package
- This package is a dummy transitional package. It can be safely removed.
-
-Package: otf-ipafont-mincho
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: fonts-ipafont-mincho, ${misc:Depends}
-Priority: extra
-Section: oldlibs
-Architecture: all
-Description: transitional dummy package
- This package is a dummy transitional package. It can be safely removed.
-
-Package: otf-ipafont-gothic
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: fonts-ipafont-gothic, ${misc:Depends}
-Priority: extra
-Section: oldlibs
-Architecture: all
-Description: transitional dummy package
- This package is a dummy transitional package. It can be safely removed.

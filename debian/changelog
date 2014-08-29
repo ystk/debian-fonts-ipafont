@@ -1,3 +1,20 @@
+fonts-ipafont (00303-12) unstable; urgency=low
+
+  * debian/control
+    - drop obsolete otf- packages
+    - use canonical URL for Vcs-* 
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 16 Jun 2013 03:23:06 +0900
+
+fonts-ipafont (00303-11) unstable; urgency=low
+
+  * debian/control
+    - set Standards-Version: 3.9.4
+    - update Vcs-* field, moved from svn to git 
+    - make it "Multi-Arch: foreign"
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 04 Jun 2013 17:32:55 +0900
+
 fonts-ipafont (00303-10.1) unstable; urgency=low
 
   * Non-maintainer upload.
